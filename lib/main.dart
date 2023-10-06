@@ -12,8 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      home: CalculatorUi(),
+      home: const CalculatorUi(),
       theme: ThemeData(
         primaryColor: Colors.white,
         hintColor: Colors.black,
@@ -22,4 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

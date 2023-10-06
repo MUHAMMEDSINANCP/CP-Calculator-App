@@ -48,7 +48,7 @@ class _CalculatorUiState extends State<CalculatorUi> {
             : Theme.of(context).primaryColor,
         body: Column(
           children: [
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Container(
               width: w,
               height: h * 0.28,
@@ -58,7 +58,7 @@ class _CalculatorUiState extends State<CalculatorUi> {
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 1, top: 25, right: 1),
+                    padding: const EdgeInsets.only(left: 1, top: 25, right: 1),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,26 +72,26 @@ class _CalculatorUiState extends State<CalculatorUi> {
                                 iconSize: 20,
                                 initialLabelIndex: 0,
                                 activeFgColor: enableDark
-                                    ? Color(0xff6b6f77)
+                                    ? const Color(0xff6b6f77)
                                     : Theme.of(context).hintColor,
                                 inactiveFgColor: enableDark
                                     ? Theme.of(context).primaryColor
-                                    : Color(0xffdddddd),
+                                    : const Color(0xffdddddd),
                                 activeBgColors: [
                                   [
                                     enableDark
-                                        ? Color(0xff2a2d37)
-                                        : Color(0xfff4f1f2),
+                                        ? const Color(0xff2a2d37)
+                                        : const Color(0xfff4f1f2),
                                   ],
                                   [
                                     enableDark
-                                        ? Color(0xfff4f1f2)
-                                        : Color(0xff2a2d37),
+                                        ? const Color(0xfff4f1f2)
+                                        : const Color(0xff2a2d37),
                                   ],
                                 ],
                                 inactiveBgColor: enableDark
-                                    ? Color(0xff2a2d37)
-                                    : Color(0xfff4f1f2),
+                                    ? const Color(0xff2a2d37)
+                                    : const Color(0xfff4f1f2),
                                 minHeight: 40,
                                 minWidth: 50,
                                 onToggle: (index) {
@@ -99,18 +99,18 @@ class _CalculatorUiState extends State<CalculatorUi> {
                                     enableDark = index == 1;
                                   });
                                 },
-                                icons: [
+                                icons: const [
                                   CupertinoIcons.sun_max,
                                   CupertinoIcons.moon,
                                 ],
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 35,
                           ),
                           Text(
-                            '$val',
+                            val,
                             style: TextStyle(
                               color: enableDark
                                   ? Theme.of(context).primaryColor
@@ -118,11 +118,11 @@ class _CalculatorUiState extends State<CalculatorUi> {
                               fontSize: 25,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           Text(
-                            '$ans',
+                            ans,
                             style: TextStyle(
                               color: enableDark
                                   ? Theme.of(context).primaryColor
@@ -140,12 +140,14 @@ class _CalculatorUiState extends State<CalculatorUi> {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  color: enableDark ? Color(0xff2a2d37) : Color(0xfff4f1f2),
-                  borderRadius: BorderRadius.vertical(
+                  color: enableDark
+                      ? const Color(0xff2a2d37)
+                      : const Color(0xfff4f1f2),
+                  borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(20),
                   ),
                 ),
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 child: GridView.count(
                   crossAxisCount: 4,
                   crossAxisSpacing: 20,
@@ -163,16 +165,16 @@ class _CalculatorUiState extends State<CalculatorUi> {
                               color: (icon == 'AC' || icon == 'DEL')
                                   ? Colors.redAccent
                                   : (icon == '+' ||
-                                  icon == '-' ||
-                                  icon == '×' ||
-                                  icon == '÷' ||
-                                  icon == '=')
-                                  ? Colors.greenAccent
-                                  : (icon == '(' || icon == ')')
-                                  ? Colors.blueAccent
-                                  : enableDark
-                                  ? Theme.of(context).primaryColor
-                                  : Theme.of(context).hintColor,
+                                          icon == '-' ||
+                                          icon == '×' ||
+                                          icon == '÷' ||
+                                          icon == '=')
+                                      ? Colors.greenAccent
+                                      : (icon == '(' || icon == ')')
+                                          ? Colors.blueAccent
+                                          : enableDark
+                                              ? Theme.of(context).primaryColor
+                                              : Theme.of(context).hintColor,
                               width: 4,
                             ),
                             shape: BoxShape.circle,
@@ -185,16 +187,16 @@ class _CalculatorUiState extends State<CalculatorUi> {
                                 color: (icon == 'AC' || icon == 'DEL')
                                     ? Colors.redAccent
                                     : (icon == '+' ||
-                                    icon == '-' ||
-                                    icon == '×' ||
-                                    icon == '÷' ||
-                                    icon == '=')
-                                    ? Colors.greenAccent.shade400
-                                    : (icon == '(' || icon == ')')
-                                    ? Colors.blueAccent
-                                    : enableDark
-                                    ? Theme.of(context).primaryColor
-                                    : Theme.of(context).hintColor,
+                                            icon == '-' ||
+                                            icon == '×' ||
+                                            icon == '÷' ||
+                                            icon == '=')
+                                        ? Colors.greenAccent.shade400
+                                        : (icon == '(' || icon == ')')
+                                            ? Colors.blueAccent
+                                            : enableDark
+                                                ? Theme.of(context).primaryColor
+                                                : Theme.of(context).hintColor,
                               ),
                             ),
                           ),
@@ -235,9 +237,18 @@ class _CalculatorUiState extends State<CalculatorUi> {
     ContextModel cm = ContextModel();
     double eval = e.evaluate(EvaluationType.REAL, cm);
     String result = eval.toString();
-    if(result.contains('e')){
+    if (result.contains('e')) {
       result = eval.toStringAsPrecision(14);
     }
     return result;
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
