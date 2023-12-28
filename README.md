@@ -1,16 +1,16 @@
-# calculator_app
+## CP Calculator App
+A basic calculator application developed to perform arithmetic operations with the ability to toggle between dark and light modes for personalized user preferences.
 
-A new Flutter project.
+### Key Features:
+Arithmetic Operations: Performs simple mathematical calculations.
+Dark/Light Mode: Provides the option to switch between dark and light themes for user convenience.
 
-## Getting Started
+### Usage:
+The Simple Calculator App allows users to perform basic arithmetic operations in a straightforward interface. With the option to switch between dark and light modes, users can customize their app experience.
 
-This project is a starting point for a Flutter application.
+### Feedback:
+For any suggestions or feedback, please reach out at cpmuhammedsinan@gmail.com. Your inputs will be valuable in enhancing this Simple Calculator App.
 
-A few resources to get you started if this is your first Flutter project:
+### Technologies Used:
+Flutter,Dart
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
